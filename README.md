@@ -1,17 +1,17 @@
 # gcloud-for-cybersec
 
-A complete guide for installing and using Google Cloud CLI (`gcloud`) for cybersecurity purposes, including multi-platform installation and understanding limitations.
+A complete guide for installing and using Google Cloud CLI (`gcloud`) for cybersecurity purposes, including multi-platform installation, connecting via Cloud Shell CLI, and understanding limitations.
 
 ## Why Use gcloud for CyberSec?
 
 * ⚡ Faster **password/hash cracking** using tools like `john` & `hashcat`
 * 🌐 Very stable **internet connection** → better recon and subdomain enumeration
-* 💾 **Access to cloud storage & VM resources** (5 GB free storage, optional paid upgrades)
+* 💾 **Access to cloud storage & VM resources** (5 GB free storage on Always Free, optional paid upgrades)
 * 🐧 Clean Linux-like environment → ideal for real-world pentesting and red-team labs
-* 📡 Freedom to run long scans without draining your device battery
+* 📡 Freedom to run long scans (Nmap, ffuf, gobuster, nuclei) without draining your device battery
 * 🛡 Very useful for OSCP-style labs, TryHackMe, HackTheBox, and CTF challenges
 
-## Installation
+## Platform-Specific Installation
 
 ### Linux (Ubuntu / Debian / Kali / PopOS)
 
@@ -36,7 +36,7 @@ gcloud init
 
 Download installer: [Google Cloud SDK Windows Installer](https://cloud.google.com/sdk/docs/install#windows)
 
-Run:
+Then run:
 
 ```bash
 gcloud init
@@ -56,6 +56,12 @@ source ~/.bashrc
 gcloud init --console-only
 ```
 
+### Connecting via Cloud Shell CLI
+
+```bash
+gcloud alpha cloud-shell ssh
+```
+
 ### Fix Component Errors (If Required)
 
 ```bash
@@ -64,18 +70,18 @@ gcloud init --console-only
 
 ## Limitations / Risks
 
-* 📦 **Free tier is limited**: Only 5 GB of Cloud Storage per month in certain regions.
-* ⏳ **VM free-tier constraint**: Only small VM (e2-micro) is always free, limited to certain regions.
-* 📉 **Network / egress costs**: Exceeding free-tier usage can incur charges.
-* ⚠️ **Billing complexity**: Unexpected charges may occur if free-tier limits are exceeded.
+* 📦 **Free tier is limited**: Only 5 GB of Cloud Storage per month.
+* ⏳ **VM free-tier constraint**: Only a small VM (e2-micro) is always free, in specific regions.
+* 📉 **Egress / network costs**: Exceeding free-tier usage can incur charges.
+* ⚠️ **Billing complexity**: Unexpected charges can occur if free-tier limits are exceeded.
 * 🔒 **Permission / scope risks for pentesting**: Cloud accounts may have strict IAM policies.
-* 🏷 **Limited free credit**: New users get $300 trial, after which costs apply for additional resources.
+* 🏷 **Limited free credit**: New users get $300 trial, after which paid resources apply.
 
 ## Notes
 
 * Use the SDK responsibly for cybersecurity learning and testing.
 * Monitor billing / usage in Google Cloud Console.
-* Free-tier quotas and resources vary by region.
+* Free-tier quotas vary by region.
 
 ---
 
