@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -51,74 +50,72 @@
 </head>
 <body>
   <div class="container">
-    <h1>gcloud for CyberSec</h1>
+    <h1>gcloud for CyberSec</h1><h2>Why Use gcloud for CyberSec?</h2>
+<ul>
+  <li>⚡ Faster <b>password/hash cracking</b> using tools like <code>john</code> & <code>hashcat</code></li>
+  <li>🌐 Very stable <b>internet connection</b> → better recon and subdomain enumeration</li>
+  <li>💾 <b>Access to cloud storage & VM resources</b> (5 GB free storage on Always Free, optional paid upgrades)</li>
+  <li>🐧 Clean Linux‑like environment → ideal for real‑world pentesting and red‑team labs</li>
+  <li>📡 Freedom to run long scans (Nmap, ffuf, gobuster, nuclei) without draining your device battery</li>
+  <li>🛡 Very useful for OSCP‑style labs, TryHackMe, HackTheBox, and CTF infrastructures</li>
+</ul>
 
-    <h2>Why Use gcloud for CyberSec?</h2>
-    <ul>
-      <li>⚡ Faster <b>password/hash cracking</b> using tools like <code>john</code> & <code>hashcat</code></li>
-      <li>🌐 Very stable <b>internet connection</b> → better recon and subdomain enumeration</li>
-      <li>💾 <b>Access to cloud storage & VM resources</b> (5 GB free storage on Always Free, optional paid upgrades) 0</li>
-      <li>🐧 Clean Linux‑like environment → ideal for real‑world pentesting and red‑team labs</li>
-      <li>📡 Freedom to run long scans (Nmap, ffuf, gobuster, nuclei) without draining your device battery</li>
-      <li>🛡 Very useful for OSCP‑style labs, TryHackMe, HackTheBox, and CTF infrastructures</li>
-    </ul>
+<h2>Platform‑Wise Installation</h2>
 
-    <h2>Platform‑Wise Installation</h2>
+<h2>Linux (Ubuntu / Debian / Kali / PopOS)</h2>
+<pre><code>sudo apt update && sudo apt upgrade -y
 
-    <h2>Linux (Ubuntu / Debian / Kali / PopOS)</h2>
-    <pre><code>sudo apt update && sudo apt upgrade -y
-sudo apt install curl -y
-curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-*.tar.gz
-tar -xf google-cloud-cli-*.tar.gz
-sudo ./google-cloud-sdk/install.sh
-gcloud init</code></pre>
+sudo apt install curl -y curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-.tar.gz tar -xf google-cloud-cli-.tar.gz sudo ./google-cloud-sdk/install.sh gcloud init</code></pre>
 
-    <h2>macOS</h2>
-    <pre><code>brew install --cask google-cloud-sdk
-exec -l $SHELL
-gcloud init</code></pre>
+<h2>macOS</h2>
+<pre><code>brew install --cask google-cloud-sdk
 
-    <h2>Windows</h2>
-    <p>Download the installer:</p>
-    <pre><code>https://cloud.google.com/sdk/docs/install#windows</code></pre>
-    <p>And run:</p>
-    <pre><code>gcloud init</code></pre>
+exec -l $SHELL gcloud init</code></pre>
 
-    <h2>Termux (Android)</h2>
-    <pre><code>pkg update && pkg upgrade -y
-pkg install curl openssh -y
-curl https://sdk.cloud.google.com | bash
+<h2>Windows</h2>
+<p>Download the installer:</p>
+<pre><code>https://cloud.google.com/sdk/docs/install#windows</code></pre>
+<p>And run:</p>
+<pre><code>gcloud init</code></pre>
 
-# Add gcloud to PATH
-echo 'export PATH=$PATH:$HOME/google-cloud-sdk/bin' >> ~/.bashrc
-source ~/.bashrc
+<h2>Termux (Android)</h2>
+<pre><code>pkg update && pkg upgrade -y
+
+pkg install curl openssh -y curl https://sdk.cloud.google.com | bash
+
+Add gcloud to PATH
+
+echo 'export PATH=$PATH:$HOME/google-cloud-sdk/bin' >> ~/.bashrc source ~/.bashrc
 
 gcloud init --console-only</code></pre>
 
-    <h2>Fix Component Errors (If Required)</h2>
-    <pre><code>~/google-cloud-sdk/install.sh --override-components</code></pre>
+<h2>Connecting via Cloud Shell CLI</h2>
+<p>Once installed, you can connect to your cloud shell using:</p>
+<pre><code>gcloud alpha cloud-shell ssh</code></pre>
 
-    <h2>Limitations / Risks</h2>
-    <ul>
-      <li>📦 **Free tier is limited**: Only 5 GB of Cloud Storage per month in certain regions. 1</li>
-      <li>⏳ **VM free-tier constraint**: Only a small VM (e2‑micro) is always free, and only in specific regions per Google’s Free Tier. 2</li>
-      <li>📉 **Egress / network costs**: Exceeding free‑tier network usage or using disallowed regions can incur charges. 3</li>
-      <li>⚠️ **Billing complexity**: Some users report unexpected billing even when they think they’re staying within free-tier usage. 4</li>
-      <li>🔒 **Permission / scope risks for pentesting**: Cloud accounts may have strict IAM policies, and doing pentesting in a cloud environment has additional scope and permission concerns. 5</li>
-      <li>🏷 **Limited free credit**: New users get a $300 trial, but after that, using resources beyond Always Free can quickly cost money. 6</li>
-    </ul>
+<h2>Fix Component Errors (If Required)</h2>
+<pre><code>~/google-cloud-sdk/install.sh --override-components</code></pre>
 
-    <h2>Notes</h2>
-    <ul>
-      <li>Use the SDK responsibly for cybersecurity learning and testing.</li>
-      <li>Monitor your billing / budget in Google Cloud console often.</li>
-      <li>Be careful about region choice — free-tier quotas vary by region. 7</li>
-    </ul>
+<h2>Limitations / Risks</h2>
+<ul>
+  <li>📦 **Free tier is limited**: Only 5 GB of Cloud Storage per month in certain regions.</li>
+  <li>⏳ **VM free-tier constraint**: Only a small VM (e2‑micro) is always free, and only in specific regions per Google’s Free Tier.</li>
+  <li>📉 **Egress / network costs**: Exceeding free‑tier network usage or using disallowed regions can incur charges.</li>
+  <li>⚠️ **Billing complexity**: Some users report unexpected billing even when they think they’re staying within free-tier usage.</li>
+  <li>🔒 **Permission / scope risks for pentesting**: Cloud accounts may have strict IAM policies, and doing pentesting in a cloud environment has additional scope and permission concerns.</li>
+  <li>🏷 **Limited free credit**: New users get a $300 trial, but after that, using resources beyond Always Free can quickly cost money.</li>
+</ul>
 
-    <p style="margin-top: 30px; color: #aaa;">Made by Aryan</p>
-  </div>
+<h2>Notes</h2>
+<ul>
+  <li>Use the SDK responsibly for cybersecurity learning and testing.</li>
+  <li>Monitor your billing / budget in Google Cloud console often.</li>
+  <li>Be careful about region choice — free-tier quotas vary by region.</li>
+</ul>
 
-  <footer>
+<p style="margin-top: 30px; color: #aaa;">Made by Aryan</p>
+
+  </div>  <footer>
     <p>© 2025 gcloud‑for‑cybersec</p>
   </footer>
 </body>
