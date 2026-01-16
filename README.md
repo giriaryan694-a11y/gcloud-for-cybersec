@@ -31,6 +31,9 @@ brew install --cask google-cloud-sdk
 exec -l $SHELL
 gcloud init
 ```
+### Browser : 
+
+https://shell.cloud.google.com/
 
 ### Windows
 
@@ -55,6 +58,9 @@ source ~/.bashrc
 
 gcloud init --console-only
 ```
+### Android play store :
+
+https://play.google.com/store/apps/details?id=com.google.android.apps.cloudconsole
 
 ### Connecting via Cloud Shell CLI
 
